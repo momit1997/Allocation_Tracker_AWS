@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './PasswordPage.css'; 
  
-const PasswordPage = (setIsAuthentication) => {
+import './PasswordPage.css';
+ 
+const PasswordPage = ({ setIsAuthenticated }) => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
  
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
     // Validate the password here, for example:
-    if (password === 'LTIM@24_DL#asgn') {
-    //   setIsAuthentication(true);
+    if (password === 'DL12345') {
+      setIsAuthenticated(true);
       navigate('/search');
     } else {
       alert('Incorrect password');
@@ -19,7 +20,7 @@ const PasswordPage = (setIsAuthentication) => {
  
   return (
     <div className="container">
-      <div className="form-container"> 
+      <div className="form-container">
         <h2>Enter Password</h2>
         <form onSubmit={handlePasswordSubmit}>
           <input
