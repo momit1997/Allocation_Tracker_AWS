@@ -10,7 +10,7 @@ const PasswordPage = ({ setIsAuthenticated }) => {
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
     // Validate the password here, for example:
-    if (password === 'DL12345') {
+    if (password === 'LTIM@24_DL#asgn') {
       setIsAuthenticated(true);
       navigate('/search');
     } else {
